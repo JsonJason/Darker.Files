@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darker.Files", "Darker.Files\Darker.Files.csproj", "{0DAE31AA-9491-43A7-AED2-1ADF7811D94A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darker.Files.Windows", "Darker.Files.Windows\Darker.Files.Windows.csproj", "{CCF30077-4BB6-434B-AB44-548DCE0D3201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darker.Files.Windows.Tests", "Darker.Files.Windows.Tests\Darker.Files.Windows.Tests.csproj", "{03420CF3-B8EA-4111-85B9-B2FBA895CB54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{0DAE31AA-9491-43A7-AED2-1ADF7811D94A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DAE31AA-9491-43A7-AED2-1ADF7811D94A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DAE31AA-9491-43A7-AED2-1ADF7811D94A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF30077-4BB6-434B-AB44-548DCE0D3201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF30077-4BB6-434B-AB44-548DCE0D3201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF30077-4BB6-434B-AB44-548DCE0D3201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF30077-4BB6-434B-AB44-548DCE0D3201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03420CF3-B8EA-4111-85B9-B2FBA895CB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03420CF3-B8EA-4111-85B9-B2FBA895CB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03420CF3-B8EA-4111-85B9-B2FBA895CB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03420CF3-B8EA-4111-85B9-B2FBA895CB54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

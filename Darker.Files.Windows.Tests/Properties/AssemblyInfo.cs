@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Darker.Files")]
+[assembly: AssemblyTitle("Darker.Files.Windows.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Darker.Files")]
+[assembly: AssemblyProduct("Darker.Files.Windows.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0dae31aa-9491-43a7-aed2-1adf7811d94a")]
+[assembly: Guid("03420cf3-b8ea-4111-85b9-b2fba895cb54")]
 
 // Version information for an assembly consists of the following four values:
 //
