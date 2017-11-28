@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darker.Serializing.Json", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darker.Serializing.Json.Tests", "Darker.Serializing.Json.Tests\Darker.Serializing.Json.Tests.csproj", "{3FAB8B71-9E31-40F8-B0C4-42148E53CB38}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistance", "Persistance", "{A2306FD0-7F82-49C3-A180-457EC52F1137}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darker.Persistance", "Darker.Persistance\Darker.Persistance.csproj", "{68A3BD13-8EEC-4FA5-BAFE-ABE5924D9E1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darker.TextFilePersistance", "Darker.TextFilePersistance\Darker.TextFilePersistance.csproj", "{5D722EF9-7127-4DCC-8B6D-B38ABDE98620}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +55,14 @@ Global
 		{3FAB8B71-9E31-40F8-B0C4-42148E53CB38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FAB8B71-9E31-40F8-B0C4-42148E53CB38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FAB8B71-9E31-40F8-B0C4-42148E53CB38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68A3BD13-8EEC-4FA5-BAFE-ABE5924D9E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68A3BD13-8EEC-4FA5-BAFE-ABE5924D9E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68A3BD13-8EEC-4FA5-BAFE-ABE5924D9E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68A3BD13-8EEC-4FA5-BAFE-ABE5924D9E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D722EF9-7127-4DCC-8B6D-B38ABDE98620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D722EF9-7127-4DCC-8B6D-B38ABDE98620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D722EF9-7127-4DCC-8B6D-B38ABDE98620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D722EF9-7127-4DCC-8B6D-B38ABDE98620}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +74,7 @@ Global
 		{ABC74CFC-750D-4443-8DB7-1B7BEFD8B17A} = {ECC1AB39-7F78-40C0-B150-ABEE7903A5BB}
 		{B422C847-3665-4461-9514-CECDAE24C23C} = {ECC1AB39-7F78-40C0-B150-ABEE7903A5BB}
 		{3FAB8B71-9E31-40F8-B0C4-42148E53CB38} = {ECC1AB39-7F78-40C0-B150-ABEE7903A5BB}
+		{68A3BD13-8EEC-4FA5-BAFE-ABE5924D9E1A} = {A2306FD0-7F82-49C3-A180-457EC52F1137}
+		{5D722EF9-7127-4DCC-8B6D-B38ABDE98620} = {A2306FD0-7F82-49C3-A180-457EC52F1137}
 	EndGlobalSection
 EndGlobal
