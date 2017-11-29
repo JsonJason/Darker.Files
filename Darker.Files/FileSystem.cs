@@ -7,7 +7,7 @@ namespace Darker.Files
         string CurrentDirectory { get; }
         string HomeDirectory { get; }
         string TempDirectory { get; }
-
+        string CreatePath(string directory, string filename);
         string GetText(string filePath);
         byte[] GetBytes(string filePath);
         bool FileExists(string filePath);

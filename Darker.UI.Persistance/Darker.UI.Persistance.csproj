@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4EA7C06-9C8B-42F8-A62E-27E027EB4C05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Darker.UI.Persistance</RootNamespace>
+    <AssemblyName>Darker.UI.Persistance</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pers\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pers\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pers\PersistanceAppFactory.cs" />
+    <Compile Include="Pers\PersistanceFormApp.cs" />
+    <Compile Include="Pers\PersistanceFormController.cs" />
+    <Compile Include="shows\ShowApp.cs" />
+    <Compile Include="shows\ShowAppController.cs" />
+    <Compile Include="shows\ShowAppFactory.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="shows\ShowSearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="shows\ShowSearchView.Designer.cs">
+      <DependentUpon>ShowSearchView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Pers\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="shows\ShowSearchView.resx">
+      <DependentUpon>ShowSearchView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Darker.Files.Windows\Darker.Files.Windows.csproj">
+      <Project>{CCF30077-4BB6-434B-AB44-548DCE0D3201}</Project>
+      <Name>Darker.Files.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.Files\Darker.Files.csproj">
+      <Project>{0DAE31AA-9491-43A7-AED2-1ADF7811D94A}</Project>
+      <Name>Darker.Files</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.Persistance\Darker.Persistance.csproj">
+      <Project>{68A3BD13-8EEC-4FA5-BAFE-ABE5924D9E1A}</Project>
+      <Name>Darker.Persistance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.Restful\Darker.Restful.csproj">
+      <Project>{90C4BECE-96BC-417D-91C6-6601D03F42A2}</Project>
+      <Name>Darker.Restful</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.Serializing.Json\Darker.Serializing.Json.csproj">
+      <Project>{B422C847-3665-4461-9514-CECDAE24C23C}</Project>
+      <Name>Darker.Serializing.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.Serializing\Darker.Serializing.csproj">
+      <Project>{ABC74CFC-750D-4443-8DB7-1B7BEFD8B17A}</Project>
+      <Name>Darker.Serializing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.TextFilePersistance\Darker.TextFilePersistance.csproj">
+      <Project>{5D722EF9-7127-4DCC-8B6D-B38ABDE98620}</Project>
+      <Name>Darker.TextFilePersistance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.TvDb\Darker.TvDb.csproj">
+      <Project>{F98263E5-B00D-4BA7-818D-FAB2D10C9291}</Project>
+      <Name>Darker.TvDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.Tv\Darker.Tv.csproj">
+      <Project>{DE841ED0-1D39-4195-9C03-09414ACD2DEF}</Project>
+      <Name>Darker.Tv</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

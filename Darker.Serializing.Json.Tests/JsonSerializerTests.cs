@@ -9,7 +9,7 @@ namespace Darker.Serializing.Json.Tests
         [SetUp]
         public void Setup()
         {
-            _serializer = new JsonSerializer();
+            _serializer = new JsonSerializer(readableFormatting:true);
         }
 
         private JsonSerializer _serializer;

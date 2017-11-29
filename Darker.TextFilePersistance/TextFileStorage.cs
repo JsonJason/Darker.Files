@@ -9,17 +9,18 @@ namespace Darker.TextFilePersistance
         private readonly FileSystem _files;
         private readonly TextSerializer _serializer;
 
-        public TextFileStorage(FileSystem files, TextSerializer serializer)
+        public TextFileStorage(FileSystem files, TextSerializer serializer,string filePath)
         {
             _files = files;
             _serializer = serializer;
+            FilePath = filePath;
         }
 
         public string FilePath { get; set; }
 
         public void Save<T>(T item)
         {
-            SaveToFile(FilePath, item);
+           SaveToFile(FilePath, item);
         }
 
         public T Load<T>() => LoadFromFile<T>(FilePath);

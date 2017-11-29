@@ -157,14 +157,36 @@ namespace Darker.Files.Windows
         {
             if (string.IsNullOrWhiteSpace(filepath)) throw new ArgumentNullException(nameof(filepath));
             if (FileExists(filepath)) throw new FileAlreadyExists(filepath);
-            Replace(filepath, content);
+            try
+            {
+                File.WriteAllText(filepath, content);
+            }
+            catch (UnauthorizedAccessException ua)
+            {
+                throw new UnauthorizedAccess(filepath, ua);
+            }
+            catch (Exception ex)
+            {
+                throw new CannotCreateFile(filepath, ex);
+            }
         }
 
         public void Create(string filepath, byte[] content)
         {
             if (string.IsNullOrWhiteSpace(filepath)) throw new ArgumentNullException(nameof(filepath));
             if (FileExists(filepath)) throw new FileAlreadyExists(filepath);
-            Replace(filepath, content);
+            try
+            {
+                File.WriteAllBytes(filepath, content);
+            }
+            catch (UnauthorizedAccessException ua)
+            {
+                throw new UnauthorizedAccess(filepath, ua);
+            }
+            catch (Exception ex)
+            {
+                throw new CannotCreateFile(filepath, ex);
+            }
         }
 
         public void Replace(string filePath, string content)
@@ -255,5 +277,10 @@ namespace Darker.Files.Windows
         public string CurrentDirectory => Environment.CurrentDirectory;
         public string HomeDirectory => Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
         public string TempDirectory => Path.GetTempPath();
+
+        public string CreatePath(string directory, string filename)
+        {
+            return Path.Combine(directory, filename);
+        }
     }
 }

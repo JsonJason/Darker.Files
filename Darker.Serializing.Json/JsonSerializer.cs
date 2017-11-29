@@ -8,14 +8,14 @@ namespace Darker.Serializing.Json
         private readonly Formatting _formatting;
         private readonly JsonSerializerSettings _settings;
 
-        public JsonSerializer() : this(new JsonSerializerSettings(), Formatting.None)
+        public JsonSerializer(bool readableFormatting =false) : this(new JsonSerializerSettings(),readableFormatting)
         {
         }
 
-        public JsonSerializer(JsonSerializerSettings settings, Formatting formatting)
+        public JsonSerializer(JsonSerializerSettings settings, bool readableFormatting = false)
         {
             _settings = settings;
-            _formatting = formatting;
+            _formatting = readableFormatting ? Formatting.Indented : Formatting.None;
         }
 
         public T Deserialize<T>(string text) => JsonConvert.DeserializeObject<T>(text, _settings);
