@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RestSerializer.cs" />
+    <Compile Include="HttpClientRestService.cs" />
+    <Compile Include="HttpRestService.cs" />
     <Compile Include="RestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestResponse.cs" />
+    <Compile Include="WebClientService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Darker.Tv;
 using Darker.UI.Persistance.shows;
 
 namespace Darker.UI.Persistance
 {
-    public partial class ShowSearchView : Form
+    public partial class ShowSearchView :BaseView
     {
         private ShowAppController _controller;
         private IEnumerable<TvShowSummary> _shows;
@@ -26,7 +27,7 @@ namespace Darker.UI.Persistance
                 _shows = value;
                 OnShowsRefreshed();
             }
-            private get => _shows;
+            get => _shows;
         }
 
         public ShowAppController Controller
@@ -38,6 +39,8 @@ namespace Darker.UI.Persistance
                 OnControllerInitialized();
             }
         }
+
+        public string FilePath { get; set; }
 
         private void OnShowsRefreshed()
         {
@@ -61,17 +64,22 @@ namespace Darker.UI.Persistance
 
         private void OnControllerInitialized()
         {
-            Controller.LoadShows();
+            Controller.Initialize();
         }
 
-        public void Error(Exception exception)
-        {
-            MessageBox.Show(exception.Message, typeof(Exception).Name);
-        }
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
             Controller.LoadShows();
+        }
+
+  
+        private void button_savetofile_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() != DialogResult.OK) return;
+            FilePath = Path.Combine(folderBrowserDialog1.SelectedPath,"shows.json");
+            Controller.SaveToFile();
         }
     }
 }

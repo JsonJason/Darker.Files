@@ -4,5 +4,6 @@
     {
         T Deserialize<T>(string text);
         string Serialize<T>(T item);
+        dynamic DynamicDeserialize(string text);
     }
 }

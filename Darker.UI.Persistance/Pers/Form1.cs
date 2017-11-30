@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Darker.UI.Persistance
 {
-    public partial class Form1 : Form
+    public partial class Form1 : BaseView
     {
 
 
@@ -22,11 +22,7 @@ namespace Darker.UI.Persistance
          
         }
 
-        public void StatusReport(string status) => label_status.Text = status;
-
-        public void Error(Exception exception) =>
-            MessageBox.Show(this, exception.Message, typeof(Exception).Name);
-
+    
         public string Message
         {
             get => box_message.Text;
@@ -39,7 +35,7 @@ namespace Darker.UI.Persistance
             set
             {
                 _controller = value;
-                OnControllerReady();
+                Controller.Initialize();
             }
         }
 

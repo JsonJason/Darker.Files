@@ -3,45 +3,33 @@ using Darker.Persistance;
 
 namespace Darker.UI.Persistance
 {
-    public class PersistanceFormController
+    public class PersistanceFormController : BaseController
     {
         private readonly Storage _storage;
 
-        public Form1 View { get; set; }
+        public new Form1 View => base.View as Form1;
 
         public PersistanceFormController(Storage storage)
         {
             _storage = storage;
         }
 
-        public void LoadMessage()
-        {
-            try
+        public void LoadMessage() => 
+            Try(() =>
             {
 
                 View.Message = _storage.Load<TestMessage>().MessageContent;
 
-                View.StatusReport("Loaded Message");
-            }
-            catch (Exception ex)
-            {
-                View.Error(ex);
-            }
-        }
+                View.StatusUpdate("Loaded Message");
+            });
 
-        public void SaveMessage()
-        {  
-            try
-            {
-
-                _storage.Save(CreateMessage(View.Message));
-                View.StatusReport("Save Successful!");
-            }
-            catch (Exception ex)
-            {
-                View.Error(ex);
-            }
-        }
+        public void SaveMessage() => 
+            Try(() =>
+        {
+            _storage.Save(CreateMessage(View.Message));
+            View.StatusUpdate("Save Successful!");
+        });
+        
 
         TestMessage CreateMessage(string content)
         {
@@ -53,6 +41,10 @@ namespace Darker.UI.Persistance
             };
         }
 
+        public void SetView(Form1 view)
+        {
+            base.View = view;
+        }
     }
 
 

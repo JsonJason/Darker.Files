@@ -1,22 +1,28 @@
 ﻿using System;
 using Darker.Tv;
+using Newtonsoft.Json.Linq;
 
 namespace Darker.TvDb
 {
     public class ModelFactory
     {
-        public static TvShowSummary ConvertToSummary(dynamic obj)
+        public static TvShowSummary ConvertToSummary(dynamic d)
         {
 
-            if (obj == null) return null;
-            var dynamicdate = obj?.data?.firstAired;
+            if (d == null) return null;
+            var dynamicdate = d?.data?.firstAired;
             DateTime? date = dynamicdate != null ? DateTime.Parse(dynamicdate) : null; 
             return new TvShowSummary
             {
-                Name = (string)obj.seriesName,
-                Banner = "https://www.thetvdb.com/banners/" + obj.banner,
-                Description = (string)obj.overview,
-                FirstAired = date
+                Name = (string)d.seriesName,
+                Banner = "https://www.thetvdb.com/banners/" + d.banner,
+                Description = (string)d.overview,
+                FirstAired = date,
+                Id = d.id,
+                Status = d.status,
+                Network = d.network,
+                Aliases = ((JArray)d.aliases).ToObject<string[]>()
+
             };
         }
 
@@ -27,10 +33,14 @@ namespace Darker.TvDb
             DateTime? date = dynamicdate != null ? DateTime.Parse(dynamicdate) : null;
             return new TvShowDetails
             {
-                Name = (string)d.data.seriesName,
-                Banner = "https://www.thetvdb.com/banners/" + d.data.banner,
-                Description = (string)d.data.overview,
-                FirstAired = date
+                Name = (string)d.seriesName,
+                Banner = "https://www.thetvdb.com/banners/" + d.banner,
+                Description = (string)d.overview,
+                FirstAired = date,
+                Id = d.id,
+                Status = d.status,
+                Network = d.network,
+                Aliases = ((JArray)d.aliases).ToObject<string[]>()
             };
         }
     }

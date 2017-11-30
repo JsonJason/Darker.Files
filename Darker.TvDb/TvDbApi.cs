@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
 using Darker.Restful;
+using Darker.Serializing;
 using Darker.Tv;
+
 namespace Darker.TvDb
 {
     public class TvDbApi : TvShowService
     {
         private readonly RestService _http;
-        private readonly RestSerializer _serializer;
+        private readonly TextSerializer _serializer;
         private readonly string _apiKey;
 
-        public TvDbApi(RestService http,RestSerializer serializer,string apiKey)
+        public TvDbApi(RestService http,TextSerializer serializer,string apiKey)
         {
             _http = http;
             _serializer = serializer;
@@ -24,7 +26,7 @@ namespace Darker.TvDb
             var response = _http.Get("/search/series?name=" + search);
             if (!response.Succeeded) yield break;
 
-            var responseObject = _serializer.DeSerialize(response);
+            var responseObject = _serializer.DynamicDeserialize(response.ResponseData);
 
             foreach (var show in responseObject.data)
             {
@@ -40,7 +42,7 @@ namespace Darker.TvDb
 
             if (!response.Succeeded) return null;
 
-            var responseObject = _serializer.DeSerialize(response);
+            var responseObject = _serializer.DynamicDeserialize(response.ResponseData);
             return ModelFactory.ConvertToDetails(responseObject.data);
         }
 
@@ -51,7 +53,7 @@ namespace Darker.TvDb
             var response = _http.Post("/login", datastring);
             if (response.Succeeded)
             {
-                var responseObject = _serializer.DeSerialize(response);
+                var responseObject = _serializer.DynamicDeserialize(response.ResponseData);
                 _http.AddBearerAuthentication((string)responseObject.token);
                 IsAuthenticated = true;
             }

@@ -45,13 +45,16 @@
   <ItemGroup>
     <Compile Include="ModelFactory.cs" />
     <Compile Include="TvDbApi.cs" />
-    <Compile Include="JsonNetRestSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Darker.Restful\Darker.Restful.csproj">
       <Project>{90C4BECE-96BC-417D-91C6-6601D03F42A2}</Project>
       <Name>Darker.Restful</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.Serializing\Darker.Serializing.csproj">
+      <Project>{ABC74CFC-750D-4443-8DB7-1B7BEFD8B17A}</Project>
+      <Name>Darker.Serializing</Name>
     </ProjectReference>
     <ProjectReference Include="..\Darker.Tv\Darker.Tv.csproj">
       <Project>{DE841ED0-1D39-4195-9C03-09414ACD2DEF}</Project>

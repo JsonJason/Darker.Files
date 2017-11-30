@@ -6,10 +6,10 @@ using Darker.TextFilePersistance;
 
 namespace Darker.UI.Persistance
 {
-    public class PersistanceAppFactory
+    public class PersistanceAppFactory : AppFactory
     {
 
-        public PersistanceFormApp Create()
+        public App Create()
         {
             PersistanceFormApp app = new PersistanceFormApp(
                 ctrl: new PersistanceFormController(CreateStorage()),

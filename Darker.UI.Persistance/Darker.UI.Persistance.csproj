@@ -45,6 +45,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comicz\ComicsAppFactory.cs" />
+    <Compile Include="Comicz\ComicApp.cs" />
+    <Compile Include="Comicz\ComicController.cs" />
+    <Compile Include="Comicz\ComicView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comicz\ComicView.Designer.cs">
+      <DependentUpon>ComicView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="common\BaseController.cs" />
+    <Compile Include="common\BaseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overwatch\OWApp.cs" />
+    <Compile Include="Overwatch\OwAppFactory.cs" />
+    <Compile Include="Overwatch\OwController.cs" />
+    <Compile Include="Overwatch\OWView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Overwatch\OWView.Designer.cs">
+      <DependentUpon>OWView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pers\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +87,12 @@
     <Compile Include="shows\ShowSearchView.Designer.cs">
       <DependentUpon>ShowSearchView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Comicz\ComicView.resx">
+      <DependentUpon>ComicView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overwatch\OWView.resx">
+      <DependentUpon>OWView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pers\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +122,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Darker.ComicScraper\Darker.ComicScraper.csproj">
+      <Project>{E92D2984-C0E7-43A6-B506-35A2412BF7DA}</Project>
+      <Name>Darker.ComicScraper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Darker.Files.Windows\Darker.Files.Windows.csproj">
       <Project>{CCF30077-4BB6-434B-AB44-548DCE0D3201}</Project>
       <Name>Darker.Files.Windows</Name>
@@ -101,6 +133,14 @@
     <ProjectReference Include="..\Darker.Files\Darker.Files.csproj">
       <Project>{0DAE31AA-9491-43A7-AED2-1ADF7811D94A}</Project>
       <Name>Darker.Files</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.OverwatchApi\Darker.OverwatchApi.csproj">
+      <Project>{4B67A2E4-5434-4394-8359-2B6E73D1ADA5}</Project>
+      <Name>Darker.OverwatchApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.OWAPI\Darker.OWAPI.csproj">
+      <Project>{61F64456-DB36-4473-AFDE-C9D8565034D6}</Project>
+      <Name>Darker.OWAPI</Name>
     </ProjectReference>
     <ProjectReference Include="..\Darker.Persistance\Darker.Persistance.csproj">
       <Project>{68A3BD13-8EEC-4FA5-BAFE-ABE5924D9E1A}</Project>
@@ -129,6 +169,14 @@
     <ProjectReference Include="..\Darker.Tv\Darker.Tv.csproj">
       <Project>{DE841ED0-1D39-4195-9C03-09414ACD2DEF}</Project>
       <Name>Darker.Tv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.UI\Darker.UI.csproj">
+      <Project>{efc30aae-640d-4c11-9556-e9b1d7216981}</Project>
+      <Name>Darker.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darker.WebComics\Darker.WebComics.csproj">
+      <Project>{EC3C8C15-DA65-4220-996B-CC3A8688F11A}</Project>
+      <Name>Darker.WebComics</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

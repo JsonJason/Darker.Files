@@ -12,7 +12,7 @@ namespace Darker.UI.Persistance
         {
             _view = view;
             _ctrl = ctrl;
-            _ctrl.View = _view;
+            _ctrl.SetView(_view);
             _view.Controller = _ctrl;
         }
 
@@ -20,11 +20,6 @@ namespace Darker.UI.Persistance
         {
             Application.Run(_view);
         }
-    }
-
-    public interface App
-    {
-        void Start();
     }
 
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Darker.UI.Persistance.Overwatch;
 
 namespace Darker.UI.Persistance
 {
@@ -11,9 +12,18 @@ namespace Darker.UI.Persistance
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            App app = new PersistanceAppFactory().Create();
-            app = new ShowAppFactory().Create();
+            App app =  CreateAppFactory().Create();
             app.Start();
         }
+
+
+        static AppFactory CreateAppFactory()
+        {
+            return new ComicsAppFactory();
+            return new OwAppFactory();
+          //  return new ShowAppFactory();
+          //  return new PersistanceAppFactory();
+        }
+
     }
 }
